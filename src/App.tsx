@@ -32,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+// git add .; if ($?) { git commit -m "Оновлення сайту" } ; if ($?) { git push origin main } ; if ($?) { npm run deploy }

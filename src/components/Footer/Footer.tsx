@@ -36,14 +36,14 @@ export const Footer = () => {
             <div></div>
             <div>
                 <h3>Посилання</h3>
-                <a href={'https://maps.app.goo.gl/xuCUhZpZJdVanSmN8'} className={s.footerItem} >
+                <a href={'https://maps.app.goo.gl/xuCUhZpZJdVanSmN8'} target={"_blank"} rel={'noopener noreferrer'} className={s.footerItem} >
                   <PlaceIcon/>
                   <div className={s.footerItemText}> Маршрут до магазину</div>
                 </a>
             </div>
             <div>
                 <h3>Соціальні мережі</h3>
-                <a className={s.footerItem} href={'https://www.facebook.com/share/g/1Vt4R66aqT/?mibextid=wwXIfr'}>
+                <a className={s.footerItem} href={'https://www.facebook.com/share/g/1Vt4R66aqT/?mibextid=wwXIfr'} target={"_blank"} rel={'noopener noreferrer'}>
                     <FacebookIcon/> Facebook
                 </a>
             </div>

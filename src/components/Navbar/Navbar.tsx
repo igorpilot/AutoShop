@@ -42,7 +42,7 @@ export const Navbar =(props: NavbarPropsType)=> {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {props.menu.map((category, index )=><MenuItem onClick={()=>{handleClose(category)}} value={index}>{category}</MenuItem>)}
+                {props.menu.map((category, index )=><MenuItem onClick={()=>handleClose(category)} value={index}>{category}</MenuItem>)}
 
             </Menu>
         </div>

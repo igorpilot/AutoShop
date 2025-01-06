@@ -4,20 +4,55 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Button} from "@mui/material";
+import {Button, Menu, MenuItem} from "@mui/material";
 import {NavLink} from "react-router-dom";
-
-export const Navbar =()=> {
+type NavbarPropsType = {
+    menu: string[]
+}
+export const Navbar =(props: NavbarPropsType)=> {
+    const [menu, setMenu] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(menu);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setMenu(event.currentTarget);
+    };
+    const handleClose = () => {
+        setMenu(null);
+    };
 
     return <div className={s.navbar}>
-            <MenuIcon  color={"inherit"}/>
-            <div>
-                <NavLink to={'/AutoShop'} className={s.navLink}><Button variant="text" color={'inherit'} >Головна</Button></NavLink>
-                <NavLink to={'/products'} className={s.navLink}><Button variant="text" color={'inherit'}>Товари</Button></NavLink>
-            </div>
+        <div>
+            <Button
+                id="basic-button"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                color={'inherit'}
+            >
+               <MenuIcon color={"inherit"}/> Категорії
+            </Button>
+            <Menu
+                id="basic-menu"
+                anchorEl={menu}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                {props.menu.map((category, index )=><MenuItem onClick={handleClose} value={index}>{category}</MenuItem>)}
 
-            <div></div>
-            <div></div>
+            </Menu>
+        </div>
+        <div>
+            <NavLink to={'/AutoShop'} className={s.navLink}><Button variant="text"
+                                                                    color={'inherit'}>Головна</Button></NavLink>
+            <NavLink to={'/products'} className={s.navLink}><Button variant="text"
+                                                                    color={'inherit'}>Товари</Button></NavLink>
+        </div>
+
+        <div></div>
+        <div></div>
         <div className={s.navDivRight}>
             <div className={s.navItemRight}><FavoriteBorderIcon/></div>
             <div className={s.navItemRight}><ShoppingCartCheckoutIcon/></div>

@@ -1,14 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './Header2.module.css'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import Select, {SelectChangeEvent} from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
 import {alpha, InputBase, styled} from "@mui/material";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import logo from '../../photo/logo.png';
-import {Header1} from "../Header1/Header1";
 import {NavLink} from "react-router-dom";
 
 
@@ -55,29 +54,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 type Header2PropsType ={
-    menu: string[]
+
 }
 export function Header2(props:Header2PropsType) {
+
     return <div className={s.header2}>
             <NavLink to={'./main'}><img src={logo} alt={'logo'} className={s.logo}/></NavLink>
         <div className={s.selectInput}>
             <div>
-                <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label"><DirectionsCarIcon/></InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={props.menu}
-                        label="Age"
-                        onChange={() => {
-                        }}
-                    >
 
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
             </div>
             <div>
                 <Search>

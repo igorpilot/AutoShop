@@ -1,0 +1,13 @@
+.header2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.selectInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    max-height: 100px;
+}

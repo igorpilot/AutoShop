@@ -1,0 +1,6 @@
+.content {
+    display: flex;
+    padding: 15px;
+    justify-content: flex-start;
+    padding-left: 20px;
+}

@@ -1,0 +1,9 @@
+.products {
+    display: flex;
+}
+.productsItem {
+    padding: 16px;
+}
+.productsItem img {
+    width: 100px;
+}

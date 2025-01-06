@@ -6,7 +6,7 @@ export const Header1 = () => {
 
     return <div className={s.header1}>
         <div className={s.header1Div1}>
-           <NavLink to={'/about'} className={s.header1Items}>Про нас </NavLink>
+           <NavLink to={'/AutoShop'} className={s.header1Items}>Про нас </NavLink>
             <NavLink to={'/contacts'} className={s.header1Items}> Контакти</NavLink>
         </div>
         <div className={s.header1Div2}>

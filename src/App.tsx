@@ -19,7 +19,7 @@ function App() {
               <Header2 menu={menu}/>
               <Navbar/>
               <Routes>
-                  <Route path="/main" Component={Main}/>
+                  <Route path="/AutoShop" Component={Main}/>
                   <Route path="/products" Component={Products}/>
                   <Route path="/about" Component={About}/>
 

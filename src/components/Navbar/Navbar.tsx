@@ -12,7 +12,7 @@ export const Navbar =()=> {
     return <div className={s.navbar}>
             <MenuIcon  color={"inherit"}/>
             <div>
-                <NavLink to={'/main'} className={s.navLink}><Button variant="text" color={'inherit'} >Головна</Button></NavLink>
+                <NavLink to={'/AutoShop'} className={s.navLink}><Button variant="text" color={'inherit'} >Головна</Button></NavLink>
                 <NavLink to={'/products'} className={s.navLink}><Button variant="text" color={'inherit'}>Товари</Button></NavLink>
             </div>
 

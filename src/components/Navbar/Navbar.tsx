@@ -12,11 +12,13 @@ type NavbarPropsType = {
 export const Navbar =(props: NavbarPropsType)=> {
     const [menu, setMenu] = React.useState<null | HTMLElement>(null);
     const open = Boolean(menu);
+    const [category, setCategory] = React.useState<string>("Категорії");
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setMenu(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleClose = (cat:string) => {
         setMenu(null);
+        setCategory(cat);
     };
 
     return <div className={s.navbar}>
@@ -29,7 +31,7 @@ export const Navbar =(props: NavbarPropsType)=> {
                 onClick={handleClick}
                 color={'inherit'}
             >
-               <MenuIcon color={"inherit"}/> Категорії
+               <MenuIcon color={"inherit"}/> {category}
             </Button>
             <Menu
                 id="basic-menu"
@@ -40,7 +42,7 @@ export const Navbar =(props: NavbarPropsType)=> {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {props.menu.map((category, index )=><MenuItem onClick={handleClose} value={index}>{category}</MenuItem>)}
+                {props.menu.map((category, index )=><MenuItem onClick={()=>{handleClose(category)}} value={index}>{category}</MenuItem>)}
 
             </Menu>
         </div>

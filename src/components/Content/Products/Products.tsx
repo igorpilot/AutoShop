@@ -1,43 +1,19 @@
 import s from './Products.module.css'
+import {useContext, useEffect} from "react";
+import {Context} from "../../../index";
+import {observer} from "mobx-react-lite";
+import SaleCard from "../../SaleCard";
 
-export const Products = ()=>{
+export const Products = observer(()=>{
+    const {store}= useContext(Context)
+    let filteredRows=store.products.filter(product=>product.category==='CARS')
+
+    useEffect(() => {
+        store.getProducts("Автотовари").then(() => {
+        });
+    }, []);
     return <div className={s.products}>
-        <div className={s.productsItem}>
-            <img src={'https://cdn.topersatzteile.de/thumb?id=963158&m=1&n=0&lng=sk&ccf=94077844'}/>
-            <p>Опис</p>
-            <p>Ціна</p>
-            <p> КУПИТИ</p>
-        </div>
-
-
-        <div className={s.productsItem}>
-            <img src={'https://scdn.autoteiledirekt.de/catalog/categories/500x500/9.png'}/>
-            <p>Опис</p>
-            <p>Ціна</p>
-            <p> КУПИТИ</p>
-        </div>
-
-        <div className={s.productsItem}>
-            <img src={'https://autovega.sk/files/product/11935/Olejovy_filter_HIFLOFILTRO_HF112.jpg'}/>
-            <p>Опис</p>
-            <p>Ціна</p>
-            <p> КУПИТИ</p>
-        </div>
-
-        <div className={s.productsItem}>
-            <img src={'https://cdn.invitalshop.sk/upload/24886-0805088923_s.jpg'}/>
-            <p>Опис</p>
-            <p>Ціна</p>
-            <p> КУПИТИ</p>
-        </div>
-
-        <div className={s.productsItem}>
-            <img
-                src={'https://a.allegroimg.com/original/1127ef/b16ce6e841bbb868084026ad628f/Podlozka-pod-olejovy-filter-Auto-Gauge-M20x1-5'}/>
-            <p>Опис</p>
-            <p>Ціна</p>
-            <p> КУПИТИ</p>
-        </div>
+        {store.products.map(p=> <SaleCard key={p.id} image={p.image} alt={p.name} description={p.description} head={p.name} price={p.sellingPrice} button={'Купить'} />)}
 
     </div>
-}
+})

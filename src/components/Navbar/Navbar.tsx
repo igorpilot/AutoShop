@@ -22,7 +22,7 @@ export const Navbar =(props: NavbarPropsType)=> {
     };
 
     return <div className={s.navbar}>
-        <div>
+        <div className={s.menu}>
             <Button
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
@@ -42,7 +42,7 @@ export const Navbar =(props: NavbarPropsType)=> {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {props.menu.map((category, index )=><MenuItem onClick={()=>handleClose(category)} value={index}>{category}</MenuItem>)}
+                {props.menu.map((category, index )=><MenuItem onClick={()=>handleClose(category)} value={index} key={index}>{category}</MenuItem>)}
 
             </Menu>
         </div>

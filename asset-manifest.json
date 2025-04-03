@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/AutoShop/static/css/main.856266ac.css",
-    "main.js": "/AutoShop/static/js/main.0314d654.js",
+    "main.css": "/AutoShop/static/css/main.d91d220d.css",
+    "main.js": "/AutoShop/static/js/main.134cbfbf.js",
     "static/js/453.1c2ab4fb.chunk.js": "/AutoShop/static/js/453.1c2ab4fb.chunk.js",
     "static/media/navigation.png": "/AutoShop/static/media/navigation.414a7150246efa7ce84b.png",
     "static/media/magaz.jpg": "/AutoShop/static/media/magaz.03f2a4cee8971a7ef31c.jpg",
     "static/media/logo.png": "/AutoShop/static/media/logo.3a32b29c33c9ded809e1.png",
     "index.html": "/AutoShop/index.html",
-    "main.856266ac.css.map": "/AutoShop/static/css/main.856266ac.css.map",
-    "main.0314d654.js.map": "/AutoShop/static/js/main.0314d654.js.map",
+    "main.d91d220d.css.map": "/AutoShop/static/css/main.d91d220d.css.map",
+    "main.134cbfbf.js.map": "/AutoShop/static/js/main.134cbfbf.js.map",
     "453.1c2ab4fb.chunk.js.map": "/AutoShop/static/js/453.1c2ab4fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.856266ac.css",
-    "static/js/main.0314d654.js"
+    "static/css/main.d91d220d.css",
+    "static/js/main.134cbfbf.js"
   ]
 }
